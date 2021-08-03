@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="apigateway-service" />
+        <module name="catalog-service" />
         <module name="discoveryservice" />
         <module name="first-service" />
         <module name="user-service" />
@@ -17,6 +18,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="apigateway-service" target="11" />
+      <module name="catalog-service" target="11" />
       <module name="demo" target="11" />
       <module name="discoveryservice" target="11" />
       <module name="first-service" target="11" />
@@ -28,6 +30,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="apigateway-service" options="-parameters" />
+      <module name="catalog-service" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="discoveryservice" options="-parameters" />
       <module name="first-service" options="-parameters" />
