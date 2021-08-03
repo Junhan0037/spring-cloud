@@ -3,11 +3,16 @@ package com.userservice.service;
 import com.userservice.domain.user.User;
 import com.userservice.dto.UserDto;
 import com.userservice.repository.UserRepository;
+import com.userservice.vo.ResponseOrders;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -26,6 +31,22 @@ public class UserServiceImpl implements UserService {
 
         userRepository.save(user);
         return userDto;
+    }
+
+    @Override
+    public UserDto getUserByUserId(String userId) {
+        User user = userRepository.findByUserId(userId).orElseThrow(() -> new UsernameNotFoundException("User not found."));
+        UserDto userDto = modelMapper.map(user, UserDto.class);
+
+        List<ResponseOrders> orders = new ArrayList<>();
+        userDto.setOrders(orders);
+
+        return userDto;
+    }
+
+    @Override
+    public Iterable<User> getUserByAll() {
+        return userRepository.findAll();
     }
 
 }

@@ -1,5 +1,6 @@
 package com.userservice.controller;
 
+import com.userservice.domain.user.User;
 import com.userservice.dto.UserDto;
 import com.userservice.service.UserService;
 import com.userservice.vo.Greeting;
@@ -11,6 +12,9 @@ import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -40,6 +44,25 @@ public class UserController {
         ResponseUser responseUser = modelMapper.map(userDto, ResponseUser.class);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseUser);
+    }
+
+    @GetMapping("/user")
+    public ResponseEntity<List<ResponseUser>> getUser() {
+        Iterable<User> userList = userService.getUserByAll();
+
+        List<ResponseUser> result  = new ArrayList<>();
+        userList.forEach(v -> {
+            result.add(modelMapper.map(v, ResponseUser.class));
+        });
+
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<ResponseUser> getUser(@PathVariable String userId) {
+        UserDto userDto = userService.getUserByUserId(userId);
+        ResponseUser responseUser = modelMapper.map(userDto, ResponseUser.class);
+        return ResponseEntity.status(HttpStatus.OK).body(responseUser);
     }
 
 }
