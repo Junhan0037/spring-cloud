@@ -12,6 +12,7 @@
         <module name="discoveryservice" />
         <module name="first-service" />
         <module name="user-service" />
+        <module name="order-service" />
         <module name="zuul-service" />
         <module name="second-service" />
       </profile>
@@ -22,6 +23,7 @@
       <module name="demo" target="11" />
       <module name="discoveryservice" target="11" />
       <module name="first-service" target="11" />
+      <module name="order-service" target="11" />
       <module name="second-service" target="11" />
       <module name="user-service" target="11" />
       <module name="zuul-service" target="11" />
@@ -34,6 +36,7 @@
       <module name="demo" options="-parameters" />
       <module name="discoveryservice" options="-parameters" />
       <module name="first-service" options="-parameters" />
+      <module name="order-service" options="-parameters" />
       <module name="second-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
       <module name="zuul-service" options="-parameters" />
