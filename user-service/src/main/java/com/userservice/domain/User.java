@@ -1,4 +1,4 @@
-package com.userservice.domain.user;
+package com.userservice.domain;
 
 import lombok.Data;
 

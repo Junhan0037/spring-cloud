@@ -1,6 +1,6 @@
 package com.userservice.controller;
 
-import com.userservice.domain.user.User;
+import com.userservice.domain.User;
 import com.userservice.dto.UserDto;
 import com.userservice.service.UserService;
 import com.userservice.vo.Greeting;

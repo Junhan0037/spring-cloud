@@ -1,6 +1,6 @@
 package com.userservice.service;
 
-import com.userservice.domain.user.User;
+import com.userservice.domain.User;
 import com.userservice.dto.UserDto;
 
 public interface UserService {
