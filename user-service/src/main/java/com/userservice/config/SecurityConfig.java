@@ -19,16 +19,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final UserService userService;
     private final PasswordEncoder passwordEncoder;
-    private final Environment env;
-
-    @Value("${ip.address}")
-    private String ip;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/**")
-                .hasIpAddress(ip)
+                .antMatchers("/**").permitAll()
                 .and()
                 .addFilter(getAuthenticationFilter());
 

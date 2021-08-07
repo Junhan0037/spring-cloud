@@ -18,7 +18,6 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/user-service")
 public class UserController {
 
     private final Greeting greeting;
