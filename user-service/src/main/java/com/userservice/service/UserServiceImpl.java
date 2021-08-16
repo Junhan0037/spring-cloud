@@ -24,6 +24,18 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
 
     @Override
+    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(userName);
+        if (user == null) {
+            throw new UsernameNotFoundException(userName);
+        }
+
+        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getEncryptedPwd(),
+                true, true, true, true,
+                new ArrayList<>());
+    }
+
+    @Override
     public UserDto createUser(UserDto userDto) {
         userDto.setUserId(UUID.randomUUID().toString());
         User user = modelMapper.map(userDto, User.class);
@@ -50,15 +62,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+    public UserDto getUserDetailsByEmail(String userName) {
         User user = userRepository.findByEmail(userName);
+
         if (user == null) {
             throw new UsernameNotFoundException(userName);
         }
 
-        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getEncryptedPwd(),
-                true, true, true, true,
-                new ArrayList<>());
+        return modelMapper.map(user, UserDto.class);
     }
 
 }
