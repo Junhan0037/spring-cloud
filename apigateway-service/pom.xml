@@ -33,6 +33,11 @@
             <classifier>osx-x86_64</classifier>
             <version>4.1.59.Final</version>
         </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
