@@ -35,7 +35,7 @@ public class UserController {
         return greeting.getMessage();
     }
 
-    @PostMapping("/user")
+    @PostMapping("/users")
     public ResponseEntity<ResponseUser> createUser(@RequestBody RequestUser requestUser) {
         UserDto userDto = modelMapper.map(requestUser, UserDto.class);
         userService.createUser(userDto);
@@ -45,7 +45,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(responseUser);
     }
 
-    @GetMapping("/user")
+    @GetMapping("/users")
     public ResponseEntity<List<ResponseUser>> getUser() {
         Iterable<User> userList = userService.getUserByAll();
 
@@ -57,7 +57,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @GetMapping("/user/{userId}")
+    @GetMapping("/users/{userId}")
     public ResponseEntity<ResponseUser> getUser(@PathVariable String userId) {
         UserDto userDto = userService.getUserByUserId(userId);
         ResponseUser responseUser = modelMapper.map(userDto, ResponseUser.class);
