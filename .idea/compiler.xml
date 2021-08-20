@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="config-service" />
         <module name="apigateway-service" />
         <module name="catalog-service" />
         <module name="discoveryservice" />
@@ -20,6 +21,7 @@
     <bytecodeTargetLevel>
       <module name="apigateway-service" target="11" />
       <module name="catalog-service" target="11" />
+      <module name="config-service" target="11" />
       <module name="demo" target="11" />
       <module name="discoveryservice" target="11" />
       <module name="first-service" target="11" />
@@ -33,6 +35,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="apigateway-service" options="-parameters" />
       <module name="catalog-service" options="-parameters" />
+      <module name="config-service" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="discoveryservice" options="-parameters" />
       <module name="first-service" options="-parameters" />
