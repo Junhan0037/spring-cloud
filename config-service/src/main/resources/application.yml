@@ -8,4 +8,5 @@ spring:
     config:
       server:
         git:
-          uri: file://Users/junhankim/Desktop/Project/Java/spring-cloud-config
+#          uri: file://Users/junhankim/Desktop/Project/Java/spring-cloud-config
+          uri: file://C:\Users\Junhan\Desktop\Project\Java\spring-cloud-config
