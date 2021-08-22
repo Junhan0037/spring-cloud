@@ -1,0 +1,15 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+#          uri: file://Users/junhankim/Desktop/Project/Java/spring-cloud-config
+          uri: file://C:\Users\Junhan\Desktop\Project\Java\spring-cloud-config
+#          uri: https://github.com/Junhan0037/spring-cloud-config.git
+#          username: [ your username ]
+#          password: [ your password ]
