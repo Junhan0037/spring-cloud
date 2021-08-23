@@ -19,3 +19,17 @@
 - 애플리케이션 배포를 위한 컨테이너 가상화
 - 애플리케이션 배포 - Docker Container
 - Appendix: Microservice Architecture 패턴
+
+## RabbitMq
+
+`$ brew update`
+
+`$ brew install rabbitmq`
+
+`$ export PATH=$PATH:/usr/local/sbin`
+
+`$ rabbitmq-server`
+
+설치 시 python 관련 오류가 발생 하면, 아래 커맨드 실행
+
+`$ xcode-select --install`
