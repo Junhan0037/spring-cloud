@@ -33,3 +33,9 @@
 설치 시 python 관련 오류가 발생 하면, 아래 커맨드 실행
 
 `$ xcode-select --install`
+
+접속 URL : `http://127.0.0.1:15672/`
+
+## Spring Cloud Bus
+
+`POST: http://localhost:8000/actuator/busrefresh`
