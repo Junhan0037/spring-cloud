@@ -22,7 +22,7 @@ public class OrderController {
     private final ModelMapper modelMapper;
     private final OrderService orderService;
 
-    @PostMapping("/{userId}/order")
+    @PostMapping("/{userId}/orders")
     public ResponseEntity<ResponseOrder> createOrder(@PathVariable String userId, @RequestBody RequestOrder requestOrder) {
         OrderDto orderDto = modelMapper.map(requestOrder, OrderDto.class);
         orderDto.setUserId(userId);
@@ -31,7 +31,7 @@ public class OrderController {
         return ResponseEntity.status(HttpStatus.CREATED).body(responseOrder);
     }
 
-    @GetMapping("/{userId}/order")
+    @GetMapping("/{userId}/orders")
     public ResponseEntity<List<ResponseOrder>> getOrder(@PathVariable String userId) {
         Iterable<Order> orderList = orderService.getOrderByUserId(userId);
 
