@@ -1,5 +1,6 @@
 package com.userservice.config;
 
+import com.userservice.error.FeignErrorDecoder;
 import feign.Logger;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.NameTokenizers;
@@ -37,5 +38,10 @@ public class AppConfig {
     public Logger.Level feignLoggerLevel() {
         return Logger.Level.FULL;
     }
+
+//    @Bean
+//    public FeignErrorDecoder getFeignErrorDecoder() {
+//        return new FeignErrorDecoder();
+//    }
 
 }
